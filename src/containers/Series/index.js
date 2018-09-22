@@ -32,7 +32,7 @@ class Series extends Component {
           margin="normal"
           onChange={this.onSeriesInputChange}
         />
-        <p>
+        <div>
           {series.length === 0 &&
             typeof seriesTitle === "undefined" && (
               <em>Enter a series title to start search</em>
@@ -46,7 +46,7 @@ class Series extends Component {
                 <SeriesList list={this.state.series} />
               </div>
             )}
-        </p>
+        </div>
       </div>
     );
   }

@@ -1,10 +1,12 @@
 import React, { Component } from "react";
 import Axios from "axios";
 import { Link } from "react-router-dom";
+import moment from "moment";
 
 class PersonDetails extends Component {
   state = {
-    person: null
+    person: null,
+    fromShow: this.props.fromShow
   };
 
   componentDidMount() {
@@ -16,17 +18,18 @@ class PersonDetails extends Component {
 
   getPersonAge(birth) {
     var a = moment(birth, "YYYY-M-D");
-    var b = moment("YYYY-M-D");
+    var b = moment();
     return b.diff(a, "years");
   }
 
   render() {
-    const { person } = this.state;
+    const { person, fromShow } = this.state;
     console.log(person);
     return (
       <div className="tvguide">
         <p>
-          <Link to="/">Back To Search</Link>
+          <Link to="/">Back To Search</Link> |{" "}
+          <a onClick={this.props.history.goBack}>Back To Show</a>
         </p>
         {person === null && <p>Loading ..</p>}
         {person !== null && (

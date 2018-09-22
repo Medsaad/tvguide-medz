@@ -14,6 +14,12 @@ class SeriesDetails extends Component {
     ).then(res => this.setState({ show: res.data }));
   }
 
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.location !== this.props.location) {
+      this.setState({ fromShow: this.props.location });
+    }
+  }
+
   render() {
     const { show } = this.state;
     console.log(show);
@@ -50,10 +56,10 @@ class SeriesDetails extends Component {
               <h3>Cast</h3>
               {show._embedded.cast.map(member => (
                 <p key={member.person.id}>
-                  <Link to={`/person/${member.person.id}`}>
+                  <Link to={`/person/${member.person.id}`} show={show.id}>
                     {member.person.name}
                   </Link>{" "}
-                  ... {member.character.name}
+                  ( {member.character.name} )
                 </p>
               ))}
             </div>
