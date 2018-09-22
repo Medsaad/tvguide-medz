@@ -1,0 +1,40 @@
+a:link,
+a:active,
+a:hover,
+a:visited {
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.54);
+}
+p {
+  color: rgba(0, 0, 0, 0.54);
+}
+.tvguide {
+  max-width: 80%;
+  width: 750px;
+  margin: 10px auto;
+  min-height: 500px;
+}
+.showimage {
+  opacity: 0.6;
+}
+#filled-full-width {
+  width: 300px !important;
+}
+
+.col-4 {
+  width: 35%;
+  margin-right: 10px;
+  display: inline-block;
+}
+
+.col-8 {
+  width: 60%;
+  display: inline-block;
+  vertical-align: top;
+}
+.rate span {
+  vertical-align: super;
+}
+.rate i {
+  color: gold;
+}
